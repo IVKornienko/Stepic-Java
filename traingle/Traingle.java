@@ -18,3 +18,7 @@ class EquilateralTraingle extends Traingle {
 class RectangularTraingle extends Traingle {
 
 }
+
+class temp extends  Traingle {
+    
+}
