@@ -1,0 +1,17 @@
+Index: tasks/Program.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package tasks;\r\n\r\nimport java.io.FileNotFoundException;\r\nimport java.io.FileReader;\r\nimport java.io.FileWriter;\r\nimport java.io.IOException;\r\nimport java.util.Scanner;\r\n\r\npublic class Program {\r\n    public static void main(String[] args) throws IOException {\r\n\r\n        FileReader fr = new FileReader(\"input.txt\");\r\n        Scanner sc = new Scanner(fr);\r\n        String str = sc.nextLine();\r\n        fr.close();\r\n\r\n        String[] s = str.split(\" \");\r\n        double a = 0, b = 0, result = 0;\r\n        String resultString = \"\";\r\n\r\n        try {\r\n            a = Double.parseDouble(s[0]);\r\n            b = Double.parseDouble(s[2]);\r\n            switch (s[1]) {\r\n                case \"+\":\r\n                    result = a + b;\r\n                    break;\r\n                case \"-\":\r\n                    result = a - b;\r\n                    break;\r\n                case \"*\":\r\n                    result = a * b;\r\n                    break;\r\n                case \"/\":\r\n                    if (b == 0) {\r\n                        resultString = \"Error! Division by zero\";\r\n                        break;\r\n                    }\r\n                    result = a / b;\r\n                    break;\r\n                default:\r\n                    resultString = \"Operation Error!\";\r\n                    break;\r\n            }\r\n            if (resultString.isEmpty())\r\n                resultString = String.valueOf(result);\r\n        } catch (Exception e) {\r\n            resultString = \"Error! Not number\";\r\n        }\r\n\r\n        FileWriter fw = new FileWriter(\"output.txt\");\r\n        fw.write(str + \" = \" + resultString);\r\n        fw.close();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tasks/Program.java b/tasks/Program.java
+--- a/tasks/Program.java	(revision 87038a0cebead92e419afd8ae6d611e18b735a46)
++++ b/tasks/Program.java	(date 1652204909037)
+@@ -1,6 +1,5 @@
+ package tasks;
+ 
+-import java.io.FileNotFoundException;
+ import java.io.FileReader;
+ import java.io.FileWriter;
+ import java.io.IOException;
