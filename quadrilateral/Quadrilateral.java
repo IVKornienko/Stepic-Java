@@ -29,3 +29,7 @@ class Rhombus extends Quadrilateral {
 class Trapeze extends Quadrilateral {
 
 }
+
+class temp extends Quadrilateral {
+
+}
